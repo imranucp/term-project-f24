@@ -1,55 +1,43 @@
-/* Style for the body with a unique font family */
 body {
-    background-color: black;
     font-family: "Arial", sans-serif;
+    background-color: #222;
     color: white;
     margin: 0;
     padding: 0;
 }
 
-/* Style the header section */
 header {
     background-color: #333;
-    color: white;
+    padding: 15px;
     text-align: center;
-    padding: 20px 10px;
 }
 
-/* Add animation to the main content */
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
-/* Apply the fade-in animation to the main content */
-main.content {
-    animation: fade-in 2s ease-in-out;
-    margin: 20px;
+nav ul li {
+    display: inline;
 }
 
-/* Style for paragraphs in the main content */
-main.content p {
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-/* Style the footer section */
-footer {
-    background-color: #222;
+nav ul li a {
     color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
+    text-decoration: none;
 }
 
-/* Add responsive image styling */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+.hero {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
 }
