@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: "Arial", sans-serif;
     background-color: #222;
@@ -6,10 +7,17 @@ body {
     padding: 0;
 }
 
+/* Header */
 header {
     background-color: #333;
     padding: 15px;
     text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #fff;
 }
 
 nav ul {
@@ -20,11 +28,36 @@ nav ul {
     gap: 15px;
 }
 
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Form Styles */
 form {
     margin: 30px auto;
     max-width: 500px;
-    padding: 15px;
-    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+form h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: #fff;
 }
 
 label {
@@ -36,4 +69,55 @@ label {
 input, textarea {
     width: 100%;
     padding: 10px;
-    margin
+    margin-bottom: 15px;
+    background-color: #444;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #aaa;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Button Styles */
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #bbb;
+}
