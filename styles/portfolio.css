@@ -20,30 +20,15 @@ nav ul {
     gap: 15px;
 }
 
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.hero {
+.project {
     text-align: center;
-    margin: 50px 0;
+    margin: 20px 0;
 }
 
-.hero img {
-    max-width: 100%;
+.project img {
+    width: 100%;
+    max-width: 300px;
     height: auto;
-    border-radius: 8px;
-}
-
-.cta-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
+    border: 2px solid #fff;
     border-radius: 5px;
 }
