@@ -1,15 +1,15 @@
 {
-    "rules": {
-      "block-no-empty": true,
-      "color-no-invalid-hex": true,
-      "declaration-colon-newline-after": "always",
-      "declaration-no-important": true,
-      "max-empty-lines": 1,
-      "no-eol-whitespace": true,
-      "selector-pseudo-element-colon-notation": "double",
-      "selector-max-id": 0,
-      "string-quotes": "double",
-      "property-no-unknown": true
-    }
+  "rules": {
+    "font-family-no-duplicate-names": true,
+    "no-empty-source": true,
+    "comment-no-empty": true,
+    "annotation-no-unknown": true,
+    "no-unknown-animations": true,
+    "declaration-block-no-duplicate-properties": true,
+    "no-duplicate-selectors": true,
+    "property-no-unknown": true,
+    "value-keyword-case": "lower",
+    "selector-type-case": "lower",
+    "block-no-empty": true
   }
-  
+}

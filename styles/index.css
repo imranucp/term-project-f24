@@ -1,8 +1,55 @@
+/* Style for the body with a unique font family */
 body {
     background-color: black;
+    font-family: "Arial", sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
 }
 
-.content {
+/* Style the header section */
+header {
+    background-color: #333;
     color: white;
-    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+/* Add animation to the main content */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply the fade-in animation to the main content */
+main.content {
+    animation: fade-in 2s ease-in-out;
+    margin: 20px;
+}
+
+/* Style for paragraphs in the main content */
+main.content p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Style the footer section */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Add responsive image styling */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
