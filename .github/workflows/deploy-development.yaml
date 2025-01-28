@@ -1,0 +1,36 @@
+name: develop-deploy workflow
+on:
+  push:
+    branches: 
+      - develop
+jobs:
+  build_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: build using parcel
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+
+      - name: saving artifacts on cloud
+        uses: actions/upload-pages-artifact@v3
+        with: 
+          path: "./dist"
+          name: "develop-artifact"
+
+  wf-develop-deploy:
+    needs: build_job     
+    permissions:
+      pages: write
+      id-token: write
+    environment: "development-env"
+    runs-on: ubuntu-latest
+    steps:
+      - name: deply build artifacts on github pages
+        uses: actions/deploy-pages@v4
+        with: 
+         artifact_name: "develop-artifact"
+         token: ${{github.token}}
