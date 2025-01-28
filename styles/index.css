@@ -1,3 +1,10 @@
-body{
+body {
     background-color: black;
+}
+
+.content {
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
 }
