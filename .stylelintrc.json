@@ -1,0 +1,15 @@
+{
+    "rules": {
+      "block-no-empty": true,
+      "color-no-invalid-hex": true,
+      "declaration-colon-newline-after": "always",
+      "declaration-no-important": true,
+      "max-empty-lines": 1,
+      "no-eol-whitespace": true,
+      "selector-pseudo-element-colon-notation": "double",
+      "selector-max-id": 0,
+      "string-quotes": "double",
+      "property-no-unknown": true
+    }
+  }
+  
