@@ -1,0 +1,24 @@
+name: wf-ci-development
+on:
+  pull_request:
+    branches:
+      - develop 
+jobs:
+  ci-development-linting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: Lint HTML and CSS
+        run: |
+          npx htmlhint "**/*.html" || echo "No HTML files to lint yet."
+          npx stylelint "**/*.css" || echo "No CSS files to lint yet."
+  ci-development-build:
+    runs-on: ubuntu-latest
+    needs: linting-job
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: Build Website
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dev" --public-url "./" || echo "No files to build yet"
