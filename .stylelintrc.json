@@ -1,0 +1,15 @@
+{
+    "rules": {
+      "color-hex-length": "short",
+      "color-named": "never",
+      "block-no-empty": true,
+      "declaration-block-trailing-semicolon": "always",
+      "indentation": 2,
+      "max-nesting-depth": 3,
+      "selector-max-id": 1,
+      "no-duplicate-selectors": true,
+      "property-no-unknown": true,
+      "unit-allowed-list": ["px", "rem", "%", "vw", "vh", "vmin", "vmax"]
+    }
+  }
+  
