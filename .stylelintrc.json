@@ -7,8 +7,7 @@
     "no-duplicate-selectors": true,
     "property-no-unknown": true,
     "unit-allowed-list": ["px", "rem", "%", "vw", "vh", "vmin", "vmax"],
-    "color-hex-case": "lower",
-    "no-eol-whitespace": true
-    
+    "rule-empty-line-before": "always",
+    "font-family-no-duplicate-names": true    
   }
 }
