@@ -1,10 +1,5 @@
 echo "Goin to Configure Local Git"
-git branch -m develop
-git config --local user.name "imran ashraf"
-git config --local user.email zsaing.ucp@gmail.com
+git config --local user.name "l1f21bsse0120"
+git config --local user.email l1f21bsse0120@ucp.edu.pk
 git config --local core.editor notepad
-touch .gitignore
-mkdir ./src ./styles
-touch ./src/index.html ./styles/index.css
-npm init -y
 echo "All Configurations Done....."
