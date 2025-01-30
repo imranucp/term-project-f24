@@ -1,0 +1,17 @@
+name: workflow-development-ci
+on:
+  pull_request:
+    branches:
+      - develop
+jobs:
+  ci-development:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone Repo
+        uses: actions/checkout@v4
+      - name: linting html and css
+        run: |
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
+      - name: build
+        run: npx parcel build "./src/index.html" --dist-dir "./dist"  --public-url "./"
