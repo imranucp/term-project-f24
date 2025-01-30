@@ -1,0 +1,16 @@
+{
+    "rules":
+{
+    "declaration-block-no-duplicate-properties": true,
+    "no-duplicate-selectors": true,
+    "value-keyword-case": "lower",
+    "selector-type-case": "lower",
+    "block-no-empty": true,
+    "font-family-no-duplicate-names": true,
+    "color-no-invalid-hex": true,
+    "property-no-unknown": true,
+    "selector-max-id": 0,
+    "declaration-block-no-duplicate-properties": true
+
+}
+}

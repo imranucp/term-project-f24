@@ -1,0 +1,23 @@
+name: wf-pr-validation
+on:
+  pull_request:
+    branches:
+      - develop
+jobs:
+  lint-job:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout repo
+        uses: actions/checkout@v4
+      - name: lint HTML and CSS
+        run: |
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
+  build-job:
+    needs: lint-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+      - name: Build with Parcel
+        run: npx parcel build "./src/index.html" --dist-dir "./dev" --public-url "./"
