@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "block-no-empty": true,
+    "color-named": "never",
+    "max-nesting-depth": 3,
+    "selector-max-id": 1,
+    "no-duplicate-selectors": true,
+    "property-no-unknown": true,
+    "unit-allowed-list": ["px", "rem", "%", "vw", "vh", "vmin", "vmax"],
+    "rule-empty-line-before": "always",
+    "font-family-no-duplicate-names": true    
+  }
+}
