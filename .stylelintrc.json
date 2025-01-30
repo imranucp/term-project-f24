@@ -1,14 +1,9 @@
 {
   "rules": {
-    "indentation": 2,
-    "max-empty-lines": 1,
-    "color-hex-case": "lower",
-    "color-hex-length": "short",
-    "font-family-no-duplicate-names": true,
-    "block-no-empty": true,
-    "unit-no-unknown": true,
-    "selector-max-id": 0,  
-    "declaration-colon-space-after": "always",
-    "property-no-unknown": true
+    "declaration-block-no-duplicate-properties": true,
+    "no-duplicate-selectors": true,
+    "value-keyword-case": "lower",
+    "selector-type-case": "lower",
+    "block-no-empty": true
   }
 }
