@@ -10,7 +10,7 @@
     "color-no-invalid-hex": true,
     "property-no-unknown": true,
     "selector-max-id": 0,
-    "max-empty-lines": 1
+    "max-empty-lines": 0
 
 }
 }
