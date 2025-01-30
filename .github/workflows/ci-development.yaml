@@ -7,18 +7,12 @@ jobs:
   ci-development-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
+      - name: Checkout Repository
         uses: actions/checkout@v4
       - name: Lint HTML and CSS
         run: |
-          npx htmlhint "**/*.html" || echo "No HTML files to lint yet."
-          npx stylelint "**/*.css" || echo "No CSS files to lint yet."
-  ci-development-build:
-    runs-on: ubuntu-latest
-    needs: linting-job
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v4
-      - name: Build Website
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
+      - name: Test Build Ops
         run: |
-          npx parcel build "./src/index.html" --dist-dir "./dev" --public-url "./" || echo "No files to build yet"
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
