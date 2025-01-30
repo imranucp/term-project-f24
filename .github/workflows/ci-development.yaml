@@ -4,7 +4,7 @@ on:
     branches:
       - develop 
 jobs:
-  ci-development-linting:
+  ci-development-job:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
