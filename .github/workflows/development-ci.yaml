@@ -9,6 +9,10 @@ jobs:
     steps:
       - name: clone Repo
         uses: actions/checkout@v4
+      - name: installing files
+        run: |
+          npm install --save-dev htmlhint
+          npm install --save-dev stylelint
       - name: linting html and css
         run: |
           npx htmlhint "**/*.html"
