@@ -1,0 +1,10 @@
+{
+  "attr-lowercase": true,
+  "attr-value-double-quotes": true,
+  "doctype-first": true,
+  "id-unique": true,
+  "tag-pair": true,
+  "tag-self-close": true,
+  "spec-char-escape": true,
+  "alt-require": true
+}
