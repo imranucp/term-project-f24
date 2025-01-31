@@ -13,4 +13,7 @@ jobs:
          run:
            npx htmlhint "**/*.html"
            npx stylelint
+      -name : Test Build
+       run:  |
+         npx parcel build ".src/index.html" --dist-dir "./dist" --public-url "./"
         
