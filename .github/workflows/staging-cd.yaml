@@ -1,0 +1,37 @@
+name: Staging Deployment
+
+on:
+  push:
+    branches:
+      - release  # Deploys when new commits are pushed to release
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Linting
+        run: |
+          npm run lint:css
+          npm run lint:html
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Deploy to Staging
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: staging-env
+          folder: dist  # Change if your build output is in another folder
+          token: ${{ secrets.GITHUB_TOKEN }}
