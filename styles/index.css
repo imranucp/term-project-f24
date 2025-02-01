@@ -26,11 +26,11 @@ nav ul li a {
     text-decoration: none;
 }
 
-.hero {
+/* .hero {
     background: url('hero.jpg') no-repeat center center/cover;
     color: white;
     padding: 100px 20px;
-}
+} */
 
 .btn {
     display: inline-block;
