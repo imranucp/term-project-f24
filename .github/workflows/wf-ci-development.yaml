@@ -9,6 +9,10 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+      - name: Install HTMLHint
+        run: npm install --save-dev htmlhint
+      - name: Install Stylelint
+        run: npm install --save-dev stylelint 
       - name: Lint HTML and CSS
         run: |
           npx htmlhint "**/*.html"
