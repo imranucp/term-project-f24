@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "color-no-invalid-hex": true,
+    "block-no-empty": true,
+    "declaration-block-no-duplicate-properties": true,
+    "font-family-no-missing-generic-family-keyword": true,
+    "unit-allowed-list": ["px", "em", "rem", "%", "vh", "vw"],
+    "selector-max-id": 1,
+    "no-duplicate-selectors": true,
+    "property-no-unknown": true,
+    "selector-type-no-unknown": true
+  }
+}
