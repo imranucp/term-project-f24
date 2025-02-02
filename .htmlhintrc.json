@@ -1,0 +1,13 @@
+{
+    "tagname-lowercase": true,
+    "attr-lowercase": true,
+    "attr-value-double-quotes": true,
+    "doctype-first": true,
+    "id-unique": true,
+    "src-not-empty": true,
+    "img-alt-require": true,
+    "spec-char-escape": true,
+    "head-script-disabled": false,
+    "title-require": true
+  }
+  
