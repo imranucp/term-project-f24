@@ -1,0 +1,48 @@
+name: Development CI/CD
+
+on:
+  pull_request:
+    branches: 
+      - develop
+    paths:
+      - '**.html'
+      - '**.css'
+  push:
+    branches:
+      - develop
+
+jobs:
+  lint-build:
+    name: Lint & Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Lint HTML & CSS
+        run: |
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
+
+      - name: Build Project
+        run: npm run build
+
+  deploy-dev:
+    name: Deploy to Development
+    needs: lint-build
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Development
+        run: echo "Deploying to Development Environment"
