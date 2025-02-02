@@ -9,6 +9,6 @@
       "color-no-invalid-hex":true,
       "rule-empty-line-before":null,
       "alpha-value-notation":null,
-      "color-fucntion-notation":null
+      "color-function-notation":null
     }
 }
