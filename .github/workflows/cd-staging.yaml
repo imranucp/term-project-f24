@@ -1,4 +1,4 @@
-name: wf-cd-staging
+name: wf-cd-stagi
 on:
   push:
     branches:
