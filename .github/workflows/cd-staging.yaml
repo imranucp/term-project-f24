@@ -2,7 +2,7 @@ name: wf-cd-staging
 on:
   push:
     branches:
-      - release/**
+      - "release/**"
 jobs:
   build-staging-job:
     runs-on: ubuntu-latest
