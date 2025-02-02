@@ -4,9 +4,7 @@ on:
   pull_request:
     branches: 
       - develop
-    paths:
-      - '**.html'
-      - '**.css'
+    
   push:
     branches:
       - develop
