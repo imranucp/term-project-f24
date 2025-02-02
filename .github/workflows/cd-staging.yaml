@@ -4,7 +4,7 @@ on:
     branches:
       - "release/**"
 jobs:
-  build-development-job:
+  build-staging-job:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -17,7 +17,7 @@ jobs:
           path: "./release"
           name: "build-artifact-development"
           
-  deploy-development-job:
+  deploy-staging-job:
     needs: "build-release-job"
     environment: "staging-env"
     permissions:
