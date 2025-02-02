@@ -7,7 +7,7 @@ on:
 
 jobs:
   deployment-build-job:
-    name: Build Static Website
+    name: Build and Upload Artifact
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
