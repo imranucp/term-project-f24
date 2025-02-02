@@ -8,7 +8,6 @@
     "selector-max-id": 1,
     "no-duplicate-selectors": true,
     "property-no-unknown": true,
-    "declaration-block-trailing-semicolon": "always",
     "selector-type-no-unknown": true
   }
 }
