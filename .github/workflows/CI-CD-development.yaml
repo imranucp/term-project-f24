@@ -1,34 +1,55 @@
-name: CI-CD-Development
-
+name: wf-ci-development
 on:
-  push:
+  pull_request:
     branches:
       - develop
-permissions:
-  id-token: write
-  contents: read
 
 jobs:
-  Build-Job:
+  ci-development-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+      - name: Checkout Repo
+        uses: actions/checkout@v4
 
-      - name: Install Dependencies
-        run: npm install parcel-bundler
+      - name: Lint Html and CSS code
+        run: |
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
 
-      - name: Build Website
-        run: npx parcel build ./src/index.html
+      - name: Test Build
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
 
-      - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v3
+  cd-build-development-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Create Build Artifacts
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+
+      - name: Test Build
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+
+      - name: Upload Development Artifacts
+        uses: actions/upload-pages-artifacts@v3
         with:
-          path: dist
+          path: "./dist"
+          name: "development-artifact"
 
-  Deploy-Job:
+  cd-deploy-development-job:
+    needs: "cd-build-development-job"
+    environment: "development-env"
+    permissions:
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
-    needs: Build-Job
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy Artifacts
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: "development-artifact"
+          token: ${{ secrets.GITHUB_TOKEN }}
