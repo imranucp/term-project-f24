@@ -1,15 +1,15 @@
 {
-    "rules": {
-      "declaration-block-no-duplicate-properties": true,
-      "no-duplicate-selectors": true,
-      "property-case": "lower",
-      "value-keyword-case": "lower",
-      "selector-type-case": "lower",
-      "block-no-empty": true,
-      "color-hex-case": "lower",
-      "max-nesting-depth": 3,
-      "font-weight-notation": "numeric",
-      "indentation": 2
-    }
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "color-hex-length": "short",
+    "color-hex-case": "lower",
+    "indentation": 2,
+    "string-quotes": "double",
+    "block-no-empty": true,
+    "selector-max-id": 1,
+    "font-weight-notation": "numeric",
+    "no-duplicate-selectors": true,
+    "declaration-block-trailing-semicolon": "always",
+    "property-no-unknown": true
   }
-  
+}
