@@ -1,0 +1,32 @@
+name: wf-cd-stagging
+on:
+  push:
+    branches:
+      - release/**
+jobs:
+  build-stagging-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Rep 
+        uses: actions/checkout@v4
+      - name: Build Website for stagging
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+      - name: Upload Build Artifacts
+        uses: actions/upload-pages-artifact@v3 
+        with:
+          path: "./dist"
+          name: "build-artifact-stagging"
+  deploy-stagging-job:
+    needs: "build-stagging-job"
+    environment: "stagging-env"
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy stagging Artifact 
+        uses: actions/deploy-pages@v4 
+        with:
+          artifact_name: "build-artifact-stagging"
+          token: ${{github.token}}
