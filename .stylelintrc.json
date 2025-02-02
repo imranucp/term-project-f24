@@ -1,15 +1,14 @@
 {
-  "extends": "stylelint-config-standard",
   "rules": {
     "color-no-invalid-hex": true,
     "block-no-empty": true,
-    "max-nesting-depth": 3,
     "declaration-block-no-duplicate-properties": true,
     "font-family-no-missing-generic-family-keyword": true,
-    "selector-max-id": 1,
     "unit-allowed-list": ["px", "em", "rem", "%", "vh", "vw"],
-    "property-no-unknown": true,
+    "selector-max-id": 1,
     "no-duplicate-selectors": true,
-    "selector-max-type": 2
+    "property-no-unknown": true,
+    "declaration-block-trailing-semicolon": "always",
+    "selector-type-no-unknown": true
   }
 }
