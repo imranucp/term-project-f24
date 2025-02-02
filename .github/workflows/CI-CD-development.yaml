@@ -1,4 +1,4 @@
-name: wf-ci-development
+name: CI-CD-development
 on:
   pull_request:
     branches:
