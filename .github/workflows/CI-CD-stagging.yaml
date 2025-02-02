@@ -1,0 +1,43 @@
+name: Staging CI/CD
+
+on:
+  push:
+    branches: 
+     - release
+  pull_request:
+    branches: 
+     - release
+
+jobs:
+  test-build:
+    name: Test & Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm test
+
+      - name: Build Project
+        run: npm run build
+
+  deploy-staging:
+    name: Deploy to Staging
+    needs: test-build
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Staging
+        run: echo "Deploying to Staging Environment"

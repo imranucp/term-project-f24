@@ -1,0 +1,15 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "color-hex-length": "short",
+    "color-hex-case": "lower",
+    "indentation": 2,
+    "string-quotes": "double",
+    "block-no-empty": true,
+    "selector-max-id": 1,
+    "font-weight-notation": "numeric",
+    "no-duplicate-selectors": true,
+    "declaration-block-trailing-semicolon": "always",
+    "property-no-unknown": true
+  }
+}

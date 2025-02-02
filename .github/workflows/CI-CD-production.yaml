@@ -1,0 +1,54 @@
+name: Production CI/CD
+
+on:
+  pull_request:
+    branches: 
+    - production
+  push:
+    branches:
+    - production
+
+jobs:
+  final-checks:
+    name: Final Lint, Tests & Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Lint HTML & CSS
+        run: |
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
+
+      - name: Run Tests
+        run: npm test
+
+      - name: Build Project
+        run: npm run build
+
+  deploy-prod:
+    name: Deploy to Production
+    needs: final-checks
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Require Manual Approval
+        uses: hmarr/auto-approve-action@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy to Production
+        run: echo "Deploying to Production Environment"
