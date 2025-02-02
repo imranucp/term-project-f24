@@ -1,0 +1,55 @@
+name: CI-CD-DEVELOPMENT
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  ci-development-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Lint Html and CSS code
+        run: |
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
+
+      - name: Test Build
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+
+  cd-build-development-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Create Build Artifacts
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+
+      - name: Test Build
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+
+      - name: Upload Development Artifacts
+        uses: actions/upload-pages-artifacts@v3
+        with:
+          path: "./dist"
+          name: "development-artifact"
+
+  cd-deploy-development-job:
+    needs: "cd-build-development-job"
+    environment: "development-env"
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Artifacts
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: "development-artifact"
+          token: ${{ secrets.GITHUB_TOKEN }}
