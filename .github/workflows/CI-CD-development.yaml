@@ -19,7 +19,7 @@ jobs:
         run: npm install parcel-bundler
 
       - name: Build Website
-        run: npx parcel build src/index.html
+        run: npx parcel build ./src/index.html
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
