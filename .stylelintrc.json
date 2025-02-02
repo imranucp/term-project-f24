@@ -1,15 +1,14 @@
 {
-    "rules": {
-      "indentation": 2,
+  "rules": {
+      "indentation": null, 
       "color-no-invalid-hex": true,
       "string-quotes": "double",
-      "no-extra-semicolons": true,
       "block-no-empty": true,
-      "selector-max-id": 0,
-      "max-nesting-depth": 3,
       "declaration-block-no-duplicate-properties": true,
+      "selector-max-id": 1,
       "font-family-no-missing-generic-family-keyword": true,
-      "unit-whitelist": ["px", "em", "rem", "%", "vh", "vw"]
-    }
+      "unit-allowed-list": ["px", "em", "rem", "%"],
+      "no-extra-semicolons": true,
+      "property-no-unknown": true
   }
-  
+}
