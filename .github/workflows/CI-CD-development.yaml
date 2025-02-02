@@ -1,46 +1,34 @@
-name: Development CI/CD
+name: CI-CD-Development
 
 on:
-  pull_request:
-    branches: 
-      - develop
-    
   push:
     branches:
       - develop
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
-  lint-build:
-    name: Lint & Build
+  Build-Job:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '22'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install parcel-bundler
 
-      - name: Lint HTML & CSS
-        run: |
-          npx htmlhint "**/*.html"
-          npx stylelint "**/*.css"
+      - name: Build Website
+        run: npx parcel build src/index.html
 
-      - name: Build Project
-        run: npm run build
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
 
-  deploy-dev:
-    name: Deploy to Development
-    needs: lint-build
-    if: github.event_name == 'push'
+  Deploy-Job:
     runs-on: ubuntu-latest
+    needs: Build-Job
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Deploy to Development
-        run: echo "Deploying to Development Environment"
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
