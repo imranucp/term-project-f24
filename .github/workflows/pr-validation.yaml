@@ -20,3 +20,19 @@ jobs:
         run: |
           npx htmlhint "**/*.html"
           npx stylelint "**/*.css"
+
+  validation-build-job:
+    needs: linting-job
+    name: Build Static Website
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: |
+          npm install parcel
+
+      - name: Build Website
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dev" --public-url "./"

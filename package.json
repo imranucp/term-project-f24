@@ -15,5 +15,6 @@
     "url": "https://github.com/imranucp/term-project-f24/issues"
   },
   "homepage": "https://github.com/imranucp/term-project-f24#readme",
-  "description": ""
+  "description": "",
+  "type": "commonjs"
 }
