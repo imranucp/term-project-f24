@@ -1,4 +1,4 @@
-name: Deploy to Development
+name: Deploy to Staging
 
 on:
   push:
@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+          with:
+            ref: staging
 
       - name: Install Dependencies
         run: npm install
@@ -26,11 +28,11 @@ jobs:
           path: "./dev"
           name: "build-artifact-development"
 
-  deploy-job:
+  stage-job:
     needs: deployment-build-job
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    environment: development-env
+    environment: staging-env
     permissions:
       pages: write
       id-token: write
