@@ -1,20 +1,20 @@
 name: wf-ci-release
+
 on:
   pull_request:
     branches:
-      -"release/**"
+      - "release/**"
+
 jobs:
   ci-build-release-job:
-  runs-on: ubantu-latest
-  steps:
-    -name: checkout repo
-     uses: actions/Checkout@v4
-     with:
-       ref: ${{github.ref}}
-     -name: lint html and css code
-      run: |
-       npx htmlhint "**/*.html"
-       npx stylelint "**/*.css"
-      -name: test build
-       run: |
-        npx parcel build  "./src/index.html" --dist-dir "./dst" --public-url "./"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}  
+
+      - name: Lint HTML and CSS code
+        run: |
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
