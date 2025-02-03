@@ -1,0 +1,33 @@
+name: wf-cd-staging
+on:
+  push:
+    branches:
+      - "release/**"
+jobs:
+  cd-staging-build-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository for Building + Uploading Build Artifact
+        uses: actions/checkout@v4
+        with:
+          ref: ${{github.ref}}
+      - name: Build Artifact
+        run: npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+      - name: Upload GH Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./dist"
+          name: "staging-build-artifact"
+  cd-staging-deploy-job:
+    needs: "cd-staging-build-job"
+    environment: "staging-env"
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Build Artifact on GH Pages
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: "staging-build-artifact"
+          token: ${{github.token}}
