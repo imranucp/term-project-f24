@@ -1,0 +1,24 @@
+name: wf-ci-staging
+on:
+  pull_request:
+    branches:
+      - "release/**"
+jobs:
+  ci-staging-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{github.ref}}
+          fetch-depth: 1
+      - name: Currently Checked Out Branch
+        run: |
+          echo "_______Following is the Currently Checkout Branch_______"
+          git branch          
+      - name: Lint HTML and CSS
+        run: |
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
+      - name: Try Buildin the Website
+        run: npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
