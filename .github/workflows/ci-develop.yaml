@@ -1,0 +1,27 @@
+name: ci-development workflow
+on:
+  pull_request:
+    branches:
+        - develop
+jobs:
+  pr_validation_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: chackout repository
+        uses: actions/checkout@v4
+      - name: install HTML Hint
+        run: npm install --save-dev htmlhint
+      - name: Add HTML Hint file
+        run: npx htmlhint "/*.html"
+      - name: install Css Lint
+        run: npm install --save-dev stylelint
+      - name: Add Style Lint file
+        run: npx stylelint "/*.css"
+  lint_build_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone repository
+        uses: actions/checkout@v4
+      - name: try build
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dev" --public-url "./"
