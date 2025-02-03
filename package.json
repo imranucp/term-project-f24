@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Term project for DevOps fundamentals",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx htmlhint '**/*.html' && npx stylelint '**/*.css'"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +15,4 @@
     "stylelint": "^16.14.1",
     "stylelint-config-standard": "^37.0.0"
   }
- 
 }
