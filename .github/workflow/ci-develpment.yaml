@@ -37,3 +37,4 @@ jobs:
   
         - name: Build the static website
           run: npx parcel build ./src/index.html --dist-dir dist --public-url ./
+ 
