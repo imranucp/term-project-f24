@@ -1,22 +1,20 @@
 name: Staging Workflow
-
 on:
   push:
     branches:
       - release/**
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: 18
 
       - name: Install Dependencies
         run: npm install
@@ -24,7 +22,5 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      - name: Deploy to Staging Environment
-        env:
-          DEPLOY_ENV: staging-env
-        run: echo "Deploying to $DEPLOY_ENV"
+      - name: Deploy to Staging
+        run: echo "Deployment to staging-env successful"

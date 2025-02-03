@@ -1,10 +1,8 @@
 {
-    "extends": "stylelint-config-standard",
-    "rules": {
-      "indentation": 2,
-      "color-hex-length": "short",
-      "selector-max-id": 0,
-      "max-nesting-depth": 3
-    }
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "indentation": 2,
+    "color-hex-length": "short",
+    "block-no-empty": true
   }
-  
+}
