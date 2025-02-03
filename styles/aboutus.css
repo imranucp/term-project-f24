@@ -1,9 +1,10 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
 }
 
 header {
@@ -29,6 +30,7 @@ nav ul li a {
 }
 
 .hero {
+    background: #007bff;
     color: #fff;
     text-align: center;
     padding: 100px 20px;
@@ -42,18 +44,13 @@ nav ul li a {
     font-size: 1.5rem;
 }
 
-.cta-button {
-    background: #ff6f61;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-}
-
-.intro {
+.intro, .mission, .team {
     padding: 50px 20px;
     text-align: center;
+    background: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 footer {
@@ -61,4 +58,5 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px 0;
+    margin-top: 20px;
 }

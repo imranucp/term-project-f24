@@ -1,7 +1,7 @@
 echo "Goin to Configure Local Git"
 git branch -m develop
-git config --local user.name "imran ashraf"
-git config --local user.email zsaing.ucp@gmail.com
+git config --local user.name "saad"
+git config --local user.email saad.mhmoood@gmail.com
 git config --local core.editor notepad
 touch .gitignore
 mkdir ./src ./styles
