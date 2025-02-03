@@ -2,7 +2,8 @@
   "name": "term-project-f24",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "npx htmlhint '**/*.html' && npx stylelint '**/*.css'",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
