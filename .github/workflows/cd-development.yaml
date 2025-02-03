@@ -12,15 +12,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install Dependencies
-        run: |
-          npm install
+      # - name: Install Dependencies
+      #   run: |
+      #     npm install
 
       - name: Build Website for Development
         run: |
           npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
 
-      - name: UploadBuildArtifacts
+      - name: Upload Build Artifacts
         uses: actions/upload-pages-artifact@v3 
         with:
           path: "./dist"
@@ -38,4 +38,4 @@ jobs:
         uses: actions/deploy-pages@v4 
         with:
           artifact_name: "build-artifact-development"
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{github.token}}
