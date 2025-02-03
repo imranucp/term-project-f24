@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Startup Website</title>
+  
+  <!-- Embedded CSS -->
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Header Hero Section */
+    .hero {
+      background-color: #4CAF50;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    /* Portfolio Grid Section */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .portfolio-item {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .portfolio-item img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .portfolio-item h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .portfolio-item p {
+      font-size: 16px;
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    /* Call to Action */
+    .call-to-action {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .call-to-action h2 {
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .cta-button:hover {
+      background-color: #45a049;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="hero portfolio-hero">
+    <div class="hero-content">
+      <h1>Our Portfolio</h1>
+      <p>Explore our successful projects and achievements.</p>
+    </div>
+  </header>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio">
+    <div class="container">
+      <h2>Recent Projects</h2>
+      <p>We take pride in delivering top-tier solutions that drive success. Below are some of the projects we have worked on recently:</p>
+
+      <div class="portfolio-grid">
+        <!-- Project 1 -->
+        <div class="portfolio-item">
+          <img src="project1.jpg" alt="Project 1">
+          <h3>Project Title 1</h3>
+          <p>A brief description of the project, the objectives, and the results achieved. It can be something related to web development, marketing, or any other service provided.</p>
+        </div>
+        <!-- Project 2 -->
+        <div class="portfolio-item">
+          <img src="project2.jpg" alt="Project 2">
+          <h3>Project Title 2</h3>
+          <p>Another project description showcasing the goals of the client, the challenges faced, and the innovative solutions implemented to meet those needs.</p>
+        </div>
+        <!-- Project 3 -->
+        <div class="portfolio-item">
+          <img src="project3.jpg" alt="Project 3">
+          <h3>Project Title 3</h3>
+          <p>This project description highlights how your startup helped the client achieve their objectives, with a focus on the impact and successful outcomes.</p>
+        </div>
+        <!-- Project 4 -->
+        <div class="portfolio-item">
+          <img src="project4.jpg" alt="Project 4">
+          <h3>Project Title 4</h3>
+          <p>Describe the scope and scale of the project, the client’s needs, and how your team provided a creative and effective solution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="call-to-action">
+    <div class="container">
+      <h2>Want to Work With Us?</h2>
+      <a href="contact.html" class="cta-button">Get in Touch</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Startup Company. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+
