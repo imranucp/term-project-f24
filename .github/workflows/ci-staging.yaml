@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - "release/**"
+      - "release"
 
 jobs:
   ci-staging-job:
