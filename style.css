@@ -1,0 +1,303 @@
+body
+{
+    font-family: sans-serif;
+    background-color: #f1f1f1;
+    
+    
+    padding-bottom: 50px;
+}
+header
+{
+    display:flex;
+    justify-content:space-between ;
+    background-color: #6500B6;
+}
+.prof 
+{
+    margin:10px;
+ color: white;
+}
+.prof ul
+{
+    list-style: none;
+ color: white;
+ margin:10px;
+}
+nav ul
+{
+    padding: 20px;
+    display: flex;
+    align-items: space-between;
+ text-decoration: none;
+ color: white;
+}
+nav  li
+{
+    margin: 10px;
+    list-style: none;
+   
+    
+}
+
+nav ul li:hover {
+    font-weight: 700;
+    text-decoration: underline;
+   
+   
+  
+}
+
+
+.hero
+{
+
+    padding:20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.content h1
+{
+    padding-left: 10px;
+    color: #6500B6;
+}
+.content p
+{
+padding: 10px;
+}
+h1
+{
+    color:#6500B6;
+}
+.skills
+{
+   
+    color: #6500B6;
+    display: flex;
+    justify-content: space-evenly;
+}
+.skill
+{
+    box-shadow: 4px 4px 10px rgba(0.5, 0.5, 0.5, 0.5);
+    background-color: white;
+    text-align: center;
+    border: 1px solid;
+    height: 150px;
+    width:150px;
+}
+.skill img
+{
+    height: 50px;
+    width:  50px;
+}
+.projects h1
+{
+    color: #6500B6;
+
+}
+.rec
+{
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+#recommendationList {
+    padding-left: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.phara {
+    
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+}
+
+.form
+{
+    text-align: center;
+   
+    margin-left:35% ;
+   width: 30%;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form button
+{
+    font-weight: 600;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    border-color: #6500B6;
+    border-radius: 10px;
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:#8c49b3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.popup-content button {
+    margin-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top:10px ;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color:#eeeeee;
+    color: black;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #d1ced2;
+}
+#scrollTopBtn 
+{
+
+    bottom: 20px;
+     right: 20px;
+    position: fixed;
+background-color: #6500B6;
+padding-top: 5px;
+padding-bottom: 5px;
+padding-left: 10px;
+padding-right: 10px;
+color: white;
+border-radius: 100px;
+}
+.popup-content {
+    background:#8c49b3;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  /* Media Queries */
+
+/* For devices with a max-width of 768px (Tablets and smaller devices) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .prof {
+        margin: 10px 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .skill {
+        margin: 10px;
+        height: 120px;
+        width: 120px;
+    }
+
+    .form {
+        margin-left: 10%;
+        width: 80%;
+    }
+
+    #recommendationList {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 10px;
+    }
+
+    input, textarea {
+        font-size: 14px;
+    }
+
+    #scrollTopBtn {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .popup {
+        width: 90%;
+    }
+
+    .popup-content button {
+        font-size: 14px;
+    }
+}
+
+/* For devices with a max-width of 480px (Mobile devices) */
+@media (max-width: 480px) {
+    .prof ul {
+        padding: 0;
+        text-align: center;
+    }
+
+    .skill {
+        height: 100px;
+        width: 100px;
+    }
+
+    #recommendationList {
+        grid-template-columns:(2, 1fr);
+        gap: 15px;
+    }
+
+    nav ul li:hover {
+        font-weight: normal;
+    }
+
+    input, textarea {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .form button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .popup-content button {
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+
+    #scrollTopBtn {
+        padding: 5px;
+        font-size: 12px;
+    }
+}
