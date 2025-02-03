@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Grant execute permissions
-        run: chmod +x node_modules/.bin/htmlhint
+        run: chmod +x node_modules/.bin/htmlhint node_modules/.bin/stylelint
 
       - name: Lint HTML and CSS
         run: npm run lint
