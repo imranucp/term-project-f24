@@ -7,7 +7,7 @@
       "block-no-empty": true,
       "color-no-invalid-hex": true,
       "font-weight-notation": "numeric",
-      "unit-allowed-list": ["px", "%", "em", "rem", "vh", "vw"],
+      "unit-allowed-list": ["px", "%", "em", "rem", "vh", "vw", "deg", "s", "fr"],
       "max-nesting-depth": 3,
       "selector-max-id": 1
     }
