@@ -12,14 +12,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install Dependencies
-        run: |
-          npm install
+      # - name: Install Dependencies
+      #   run: |
+      #     npm install
 
       - name: Lint HTML and CSS
         run: |
-          npx htmlhint "**/*.html" || exit 1
-          npx stylelint "**/*.css" --fix || exit 1
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
 
       - name: Test Build Ops
         run: |
