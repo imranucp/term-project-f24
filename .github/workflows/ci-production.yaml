@@ -1,0 +1,29 @@
+name: wf-ci-production
+on:
+  pull_request:
+    branches:
+      - production
+jobs:
+  lintingJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v4
+      - name: install html hint
+        run: npm install --save-dev htmlhint
+      - name: install css lint
+        run: npm install --save-dev stylelint
+      - name: linting html
+        run: npx htmlhint "**/*.html"
+      - name: linting style
+        run: npx stylelint "**/*.css"
+  build:
+    runs-on: ubuntu-latest
+    needs: lintingJob
+    steps:
+      - name: clone Repo
+        uses: actions/checkout@v4
+      - name: installing parcel
+        run: npm install --save-dev parcel
+      - name: building using parser
+        run: npx parcel build "./src/index.html" --dist-dir "./dev" --public-url "./"
