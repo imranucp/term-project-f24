@@ -1,53 +1,33 @@
 name: Development Workflow
+
 on:
-  pull_request:
+  push:
     branches:
       - develop
 
 jobs:
-  linting:
-    name: Lint HTML and CSS
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Install htmlhint and stylelint globally
-        run: |
-          npm install -g htmlhint stylelint
-
-      - name: Lint HTML files
-        run: |
-          npx htmlhint "src/**/*.html"
-
-      - name: Lint CSS files
-        run: |
-          npx stylelint "styles/**/*.css"
-
   build:
-    name: Build Static Website
-    needs: linting
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Check out the repository
         uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: "16"
 
       - name: Install dependencies
         run: npm install
+
+      - name: Lint HTML and CSS
+        run: npm run lint
 
       - name: Build the project
+        run: npm run build
+
+      - name: Deploy to development environment
         run: |
-          npx parcel build src/index.html
+          # Add your deployment commands here, like:
+          # npm run deploy:dev
