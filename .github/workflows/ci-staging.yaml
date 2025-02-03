@@ -1,20 +1,20 @@
-name: wf-ci-release
-
+name: wf-ci-staging
 on:
   pull_request:
     branches:
-      - "release/**"
-
+      - release/**
 jobs:
-  ci-build-release-job:
+  ci-staging-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: checkout repo
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}  
-
-      - name: Lint HTML and CSS code
+          ref: ${{github.ref}}
+      - name: Lint HTML and CSS Code 
         run: |
           npx htmlhint "**/*.html"
           npx stylelint "**/*.css"
+      - name: Build Artifact 
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
