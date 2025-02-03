@@ -7,8 +7,10 @@ jobs:
   ci-production-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Chekcout Repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{github.ref}}
       - name: Lint HTML and CSS
         run: |
           npx htmlhint "**/*.html"
