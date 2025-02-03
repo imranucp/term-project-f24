@@ -1,8 +1,10 @@
 {
   "extends": "stylelint-config-standard",
   "rules": {
-    "indentation": 2,
-    "color-hex-length": "short",
-    "block-no-empty": true
+    "value-keyword-case": "lower",
+    "selector-type-case": "lower",
+    "block-no-empty": true,
+    "declaration-block-no-duplicate-properties": true,
+    "no-duplicate-selectors": true
   }
 }
