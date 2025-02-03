@@ -1,0 +1,14 @@
+{
+  "rules": {
+    "color-named": "always-where-possible",  
+    "color-no-invalid-hex": true,  
+    "number-leading-zero": "always",  
+    "unit-disallowed-list": [],  
+    "selector-max-id": 2,  
+    "declaration-no-important": false,  
+    "max-nesting-depth": 5,  
+    "property-no-vendor-prefix": false,  
+    "selector-max-class": 5,  
+    "shorthand-property-no-redundant-values": false  
+  }
+}
