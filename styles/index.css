@@ -1,104 +1,91 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
+/* Global Styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
     color: #333;
-}
-
-/* Navigation Bar */
-header {
-    background: #222;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: #333;
     color: white;
-    padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
+    padding: 1em 0;
     text-align: center;
-}
-
-nav {
+  }
+  
+  nav ul {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin: auto;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.nav-links {
+    justify-content: center;
     list-style: none;
     padding: 0;
-}
-
-.nav-links li {
-    display: inline;
+  }
+  
+  nav ul li {
     margin: 0 15px;
-}
-
-.nav-links a {
+  }
+  
+  nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-}
-
-.nav-links a:hover {
-    color: #f8b400;
-}
-
-/* Hero Section */
-.hero {
-    background: url() no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 1.1em;
+  }
+  
+  #hero {
+    background-color: #1f2937;
+    color: white;
     text-align: center;
+    padding: 4em 2em;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  #hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+  }
+  
+  #hero p {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
+  
+  .cta-button {
+    background-color: #007bff;
     color: white;
-    padding: 20px;
-}
-
-.hero-content h1 {
-    font-size: 48px;
-}
-
-.hero-content p {
-    font-size: 20px;
-    margin: 20px 0;
-}
-
-.btn {
-    background: #f8b400;
-    color: white;
-    padding: 10px 20px;
+    padding: 0.8em 1.5em;
     text-decoration: none;
-    font-size: 18px;
-    border-radius: 5px;
-}
-
-.btn:hover {
-    background: #d19a00;
-}
-
-/* Call to Action */
-.cta {
+    border-radius: 4px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #0056b3;
+  }
+  
+  #introduction {
+    padding: 4em 2em;
+    background-color: white;
+    margin: 2em 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  h2 {
     text-align: center;
-    padding: 50px 20px;
-    background: #f8b400;
+    margin-bottom: 1.5em;
+  }
+  
+  footer {
+    background-color: #333;
     color: white;
-}
-
-.cta h2 {
-    font-size: 32px;
-}
-
-/* About Page Styles */
-.about, .mission, .team {
-    padding: 50px 20
-}
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+  }
