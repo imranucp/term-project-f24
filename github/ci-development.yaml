@@ -1,0 +1,39 @@
+name: pr-validation
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  linting-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build-step 
+        uses: actions/checkout@v4
+      - name: instaling html hint  
+        run: npm install --save-dev htmlhint
+      - name: instaling style lint  
+        run: npm install --save-dev stylelint
+      - name: running html hint  
+        run: npx htmlhint "**/*.html"
+      - name: running style lint  
+        run: npx stylelint "**/*.css"    
+
+  build:
+      runs-on: ubuntu-latest
+      needs: linting-job 
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+        - name: Set up Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: '18' 
+        - name: Install dependencies
+          run: npm install
+  
+        - name: Build the static website
+          run: npx parcel build ./src/index.html --dist-dir dist --public-url ./
