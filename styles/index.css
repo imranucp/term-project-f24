@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 /* General Styles */
+=======
+>>>>>>> 11ecbcb485cd47261bd53ae852a6d526db8ed6f6
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
     background-color: #f5f5f5;
     color: #333;
 }
@@ -24,10 +28,30 @@ nav ul {
 }
 
 nav ul li {
+=======
+    text-align: center;
+    background: #f9f9f9;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+>>>>>>> 11ecbcb485cd47261bd53ae852a6d526db8ed6f6
     margin: 0 15px;
 }
 
 nav ul li a {
+<<<<<<< HEAD
     color: #fff;
     text-decoration: none;
     font-size: 18px;
@@ -115,4 +139,27 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+=======
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 50px 20px;
+}
+
+.portfolio-item {
+    background: #fff;
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 600px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+>>>>>>> 11ecbcb485cd47261bd53ae852a6d526db8ed6f6
 }
