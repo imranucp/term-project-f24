@@ -1,4 +1,5 @@
-{
+{ 
+  "rules":{
     "color-no-invalid-hex": true,
     "block-no-empty": true,
     "indentation": 2,
@@ -10,3 +11,4 @@
     "color-named": "never",
     "property-no-unknown": true
   }
+}

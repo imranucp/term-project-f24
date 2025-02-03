@@ -12,11 +12,11 @@ jobs:
       - name: install HTML Hint
         run: npm install --save-dev htmlhint
       - name: Add HTML Hint file
-        run: npx htmlhint "/*.html"
+        run: npx htmlhint "**/*.html"
       - name: install Css Lint
         run: npm install --save-dev stylelint
       - name: Add Style Lint file
-        run: npx stylelint "/*.css"
+        run: npx stylelint "**/*.css"
   lint_build_job:
     runs-on: ubuntu-latest
     steps:
@@ -24,4 +24,4 @@ jobs:
         uses: actions/checkout@v4
       - name: try build
         run: |
-          npx parcel build "./src/index.html" --dist-dir "./dev" --public-url "./"
+          npx parcel build "./src/index.html" --dist-dir "./dev" --public-url "./"
