@@ -45,7 +45,7 @@
     font-size: 1.1rem;
     padding: 0.5rem 1rem;
     border-radius: 2rem;
-    transition: all 0.3s;
+    transition: all 0.3;
     position: relative;
   }
   
@@ -59,7 +59,7 @@
     background-color: white;
     transform: scaleX(0);
     transform-origin: center;
-    transition: transform 0.3s;
+    transition: transform 0.3;
   }
   
   nav a:hover {
@@ -109,7 +109,7 @@
     border-radius: 1.5rem;
     padding: 2.5rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s;
+    transition: all 0.3;
     position: relative;
     overflow: hidden;
   }
@@ -124,7 +124,7 @@
     background: linear-gradient(to right, #2193b0, #6dd5ed);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.3s;
+    transition: transform 0.3;
   }
   
   .service-card:hover {
