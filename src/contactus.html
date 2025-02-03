@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Startup Website</title>
+  
+  <!-- Embedded CSS -->
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Header Hero Section */
+    .hero {
+      background-color: #4CAF50;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .cta-button:hover {
+      background-color: #555;
+    }
+
+    /* Contact Section */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form label {
+      margin-bottom: 10px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #4CAF50;
+    }
+
+    .contact-form button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #45a049;
+    }
+
+    /* Contact Info */
+    .contact-info {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .contact-info h3 {
+      margin-bottom: 10px;
+    }
+
+    .contact-info p {
+      margin-bottom: 5px;
+    }
+
+    /* Call to Action */
+    .call-to-action {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .call-to-action h2 {
+      margin-bottom: 20px;
+    }
+
+    .call-to-action a {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 5px;
+    }
+
+    .call-to-action a:hover {
+      background-color: #45a049;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="hero contact-hero">
+    <div class="hero-content">
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you! Reach out to us for any queries or collaborations.</p>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p>If you have any questions or would like to work with us, feel free to reach out. Fill out the form below or contact us using the provided details.</p>
+
+      <!-- Contact Form -->
+      <form action="submit_form.php" method="post" class="contact-form">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="cta-button">Send Message</button>
+      </form>
+
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <h3>Our Contact Details</h3>
+        <p><strong>Email:</strong> contact@startup.com</p>
+        <p><strong>Phone:</strong> +123-456-7890</p>
+        <p><strong>Address:</strong> 123 Startup Street, Tech City, Country</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="call-to-action">
+    <div class="container">
+      <h2>Follow Us on Social Media</h2>
+      <a href="https://www.facebook.com" target="_blank" class="cta-button">Facebook</a>
+      <a href="https://www.twitter.com" target="_blank" class="cta-button">Twitter</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Startup Company. All rights reserved.</p>
+  </footer>
+</body>
+</html>
