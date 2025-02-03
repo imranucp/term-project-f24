@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Term project for DevOps fundamentals",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "npx htmlhint '**/*.html' && npx stylelint '**/*.css'"
-  },
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "lint": "npx htmlhint '**/*.html' && npx stylelint '**/*.css'",
+  "build": "parcel build index.html"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
