@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "declaration-block-no-duplicate-properties": true,
+    "no-duplicate-selectors": true,
+    "value-keyword-case": "lower",
+    "selector-type-case": "lower",
+    "block-no-empty": true,
+    "color-no-invalid-hex": true,
+    "rule-empty-line-before": null,
+    "alpha-value-notation": null,
+    "color-function-notation": null
+  }
+}
