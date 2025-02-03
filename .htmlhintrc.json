@@ -1,0 +1,12 @@
+{
+    "attr-lowercase": true,
+    "attr-no-duplication": true,
+    "doctype-first": true,
+    "id-unique": true,
+    "tagname-lowercase": true,
+    "title-require": true,
+    "alt-require": true,
+    "spec-char-escape": true,
+    "space-tab-mixed-disabled": "space",
+    "href-abs-or-rel": "abs"
+  }
