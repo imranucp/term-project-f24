@@ -1,10 +1,13 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    color: #333;
 }
 
+/* Header */
 header {
     text-align: center;
     background: #333;
@@ -12,6 +15,7 @@ header {
     padding: 20px;
 }
 
+/* Portfolio Section */
 .portfolio {
     display: flex;
     justify-content: center;
@@ -19,26 +23,35 @@ header {
     padding: 20px;
 }
 
+/* Individual Project Cards */
 .project {
     background: white;
-    margin: 10px;
+    margin: 15px;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
+    transition: transform 0.2s;
 }
 
+.project:hover {
+    transform: scale(1.05);
+}
+
+/* Project Images */
 .project img {
     width: 100%;
-    height: auto;
+    height: 180px;
     border-radius: 8px;
+    object-fit: cover;
 }
 
-.project h2 {
-    color: #333;
-}
-
-.project p {
-    color: #666;
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #333;
+    color: white;
+    margin-top: 20px;
 }
