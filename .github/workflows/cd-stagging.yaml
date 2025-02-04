@@ -2,34 +2,39 @@ name: wf-cd-staging
 on:
   push:
     branches:
-      - "release/**" 
+      - "release/**"
+
 jobs:
   build-staging-job:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - name: Chekcout Repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          ref: ${{github.ref}}
-      - name: Build Website for staging 
+
+      - name: Build Website for Staging
         run: |
           npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+
       - name: Upload Build Artifacts
-        uses: actions/upload-pages-artifact@v3 
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "./dist"
           name: "build-artifact-staging"
+
   deploy-staging-job:
-    needs: "build-staging-job"
-    environment: "staging-env"
+    needs: build-staging-job
+    environment: staging-env
     permissions:
       pages: write
       id-token: write
     runs-on: ubuntu-latest
+    concurrency:
+      group: "pages-staging"
+      cancel-in-progress: false
     steps:
-      - name: Deploy staging Artifact 
-        uses: actions/deploy-pages@v4 
+      - name: Deploy Staging Artifact
+        uses: actions/deploy-pages@v4
         with:
           artifact_name: "build-artifact-staging"
-          token: ${{github.token}}  
-  
