@@ -1,0 +1,18 @@
+name: Pr Validation
+on:
+  pull_request:
+    branches:
+      - develop
+jobs:
+    linting_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+            - name: Linting
+              run: |
+                npx htmlhint "**/*.html"
+                npx stylelint "**/*.css"
+            - name: building website
+              run: |
+                npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
