@@ -1,35 +1,20 @@
-name: wf-cd-staging
+name: wf-ci-staging
 on:
-  push:
+  pull_request:
     branches:
-      - "release/**" 
+      - "release/**"
 jobs:
-  build-staging-job:
+  ci-staging-job:
     runs-on: ubuntu-latest
     steps:
       - name: Chekcout Repository
         uses: actions/checkout@v4
         with:
-          ref: ${{github.ref}}
-      - name: Build Website for staging 
+          ref: ${{github.ref}} 
+      - name: LInt HTML and CSS 
+        run: |
+          npx htmlhint "**/*.html""
+          npx stylelint "**/*.css""
+      - name: Test Build In Staging 
         run: |
           npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
-      - name: Upload Build Artifacts
-        uses: actions/upload-pages-artifact@v3 
-        with:
-          path: "./dist"
-          name: "build-artifact-staging"
-  deploy-staging-job:
-    needs: "build-staging-job"
-    environment: "staging-env"
-    permissions:
-      pages: write
-      id-token: write
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy staging Artifact 
-        uses: actions/deploy-pages@v4 
-        with:
-          artifact_name: "build-artifact-staging"
-          token: ${{github.token}}  
-  
