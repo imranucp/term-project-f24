@@ -12,8 +12,8 @@ jobs:
 
       - name: Lint HTML and CSS
         run: |
-          npx htmlhint "/*.html"
-          npx stylelint "/*.css"
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
 
       - name: Test Build Ops
         run: |
