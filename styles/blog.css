@@ -1,0 +1,24 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    text-align: center;
+    background-color: #007acc;
+    color: white;
+    padding: 20px 0;
+  }
+  
+  .blog-post {
+    background: white;
+    border: 1px solid #ddd;
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 600px;
+  }
+  
