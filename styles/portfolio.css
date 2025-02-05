@@ -1,0 +1,28 @@
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+  }
+  
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px;
+  }
+  
+  .project {
+    background: #007acc;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
