@@ -1,0 +1,24 @@
+name: Production Workflow
+
+on:
+  pull_request:
+    branches:
+      - production
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: npm install
+      - name: Run final tests and linting
+        run: npm run lint && npm test
+      - name: Deploy to Production
+        run: ./deploy.sh production
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
