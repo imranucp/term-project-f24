@@ -1,19 +1,19 @@
 {
   "name": "term-project-f24",
   "version": "1.0.0",
+  "description": "Term project for DevOps fundamentals",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/imranucp/term-project-f24.git"
-  },
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "lint": "npx htmlhint '**/*.html' && npx stylelint '**/*.css'",
+  "build": "parcel build src/index.html"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/imranucp/term-project-f24/issues"
-  },
-  "homepage": "https://github.com/imranucp/term-project-f24#readme",
-  "description": ""
+  "devDependencies": {
+    "htmlhint": "^1.1.4",
+    "parcel": "^2.9.3",
+    "stylelint": "^16.14.1",
+    "stylelint-config-standard": "^37.0.0"
+  }
 }
