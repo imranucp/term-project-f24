@@ -1,0 +1,14 @@
+{
+  "rules": {
+    "declaration-block-no-duplicate-properties": true,
+    "no-duplicate-selectors": true,
+    "value-keyword-case": "lower",
+    "selector-type-case": "lower",
+    "block-no-empty": true,
+    "color-no-invalid-hex": true,
+    "font-weight-notation": "numeric",
+    "unit-allowed-list": ["px", "%", "em", "rem", "vh", "vw"],
+    "max-nesting-depth": 3,
+    "selector-max-id": 1
+  }
+}
