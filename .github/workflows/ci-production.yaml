@@ -1,0 +1,21 @@
+name: wf-ci-production
+on:
+  pull_request:
+    branches:
+      - production
+jobs:
+  ci-lint-production-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          ref: ${{github.ref}}
+          fetch-depth: 1
+      - name: Lint HTML and CSS
+        run: |
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
+      - name: Build For Ci-Production
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"    
