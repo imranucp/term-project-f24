@@ -1,0 +1,19 @@
+name: wf-release-integrate
+on:
+  pull_request:
+    branches:
+      - release 
+jobs:
+  release-pr-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          ref: ${{github.event.pull_request.head.ref}}
+      - name: Lint HTML and CSS
+        run: |
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
+      - name: Build Website
+        run: npx parcel build "./src/index.html" --dist-dir "./dev" --public-url "./"

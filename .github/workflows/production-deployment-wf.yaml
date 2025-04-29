@@ -1,0 +1,35 @@
+name: wf-production-deploy
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  production-build-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Chekcout Repo
+        uses: actions/checkout@v4 
+        with:
+          ref: ${{github.ref}}
+      - name: Build Website With Parcel 
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dev" --public-url "./"
+      - name: Upload Build Artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./dev"
+          name: "production-artifact"
+  production-deploy-job:
+    needs: "production-build-job"
+    environment: "production-env"
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Artifacts on GH Pages 
+        uses: actions/deploy-pages@v4 
+        with: 
+          artifact_name: "production-artifact"
+          token: ${{github.token}}

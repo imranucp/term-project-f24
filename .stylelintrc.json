@@ -1,0 +1,14 @@
+{
+  "rules": {
+    "declaration-block-no-duplicate-properties": true,
+    "no-duplicate-selectors": true,
+    "value-keyword-case": "lower",
+    "block-no-empty": true,
+    "no-empty-source": true,
+    "length-zero-no-unit": true,
+    "comment-whitespace-inside": "always",
+    "font-family-no-duplicate-names": true,
+    "comment-no-empty": true,
+    "at-rule-no-deprecated": true
+  }
+}

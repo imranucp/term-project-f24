@@ -1,0 +1,27 @@
+name: production-integration-wf
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+jobs:
+  production-linting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: ${{github.ref}}
+      - name: Linting of HTML and CSS Files
+        run: |
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
+  production-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: ${{github.ref}}
+      - name: Build using Parcel 
+        run: npx parcel build "./src/index.html" --dist-dir "./dev" --public-url "./"
