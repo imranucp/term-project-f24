@@ -1,0 +1,12 @@
+{
+  "tagname-lowercase": true,
+  "attr-lowercase": true,
+  "alt-require": true,
+  "id-unique": true,
+  "tag-pair": true,
+  "attr-value-double-quotes": true,
+  "title-require": true,
+  "attr-no-unnecessary-whitespace": true,
+  "id-class-ad-disabled": true,
+  "head-script-disabled": true
+}
