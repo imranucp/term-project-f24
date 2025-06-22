@@ -31,4 +31,4 @@ jobs:
         run: npx parcel build index.html
 
       - name: Deploy to Development Environment
-        run: echo "✅ Deployed to development-env"  # Temporary message
+        run: echo "✅ Deployed to development-env"
