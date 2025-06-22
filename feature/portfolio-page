@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Our Portfolio</title>
+  <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+  <section>
+    <h1>Portfolio</h1>
+    <div class="project">
+      <h2>Project Alpha</h2>
+      <p>A web app for smart scheduling.</p>
+    </div>
+    <div class="project">
+      <h2>Project Beta</h2>
+      <p>A mobile app for solar panel management.</p>
+    </div>
+  </section>
+</body>
+</html>
