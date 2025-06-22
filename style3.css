@@ -1,0 +1,12 @@
+body {
+  font-family: Verdana, sans-serif;
+  padding: 30px;
+  background-color: #fdfdfd;
+}
+
+article {
+  background: #f0f8ff;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-left: 5px solid #007acc;
+}
