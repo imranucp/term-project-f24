@@ -1,0 +1,12 @@
+body {
+  font-family: Tahoma, sans-serif;
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+
+.project {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px 0;
+  background: #fff;
+}
