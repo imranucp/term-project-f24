@@ -1,0 +1,41 @@
+name: Development Workflow
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [develop]
+
+jobs:
+  DEV:
+    runs-on: ubuntu-latest
+    environment: development
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install All Dependencies
+        run: |
+          npm install htmlhint stylelint stylelint-config-standard parcel --save-dev
+
+      - name: Run HTMLHint (with fresh install)
+        run: npx htmlhint "src/**/*.html"
+
+      - name: Run Stylelint (with fresh install)
+        run: npx stylelint "styles/**/*.css"
+
+      - name: Build Project with Parcel
+        run: npx parcel build src/index.html --dist-dir dist
+
+      - name: Deploy to Development Environment
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          destination_dir: development
