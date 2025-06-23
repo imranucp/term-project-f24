@@ -11,8 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: development
 
- 
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -23,19 +21,16 @@ jobs:
           node-version: 20
 
       - name: Install Dependencies
-        run: npm install --save-dev
-
-      - name: Add node_modules/.bin to PATH
-        run: echo "$PWD/node_modules/.bin" >> $GITHUB_PATH
+        run: npm install
 
       - name: Run HTMLHint
-        run: npx htmlhint "src/**/*.html"
+        run: ./node_modules/.bin/htmlhint "src/**/*.html"
 
       - name: Run Stylelint
-        run: npx stylelint "styles/**/*.css"
+        run: ./node_modules/.bin/stylelint "styles/**/*.css"
 
       - name: Build Project with Parcel
-        run: npx parcel build src/index.html --dist-dir dist
+        run: ./node_modules/.bin/parcel build src/index.html --dist-dir dist
 
       - name: Deploy to Development Environment
         uses: peaceiris/actions-gh-pages@v3
