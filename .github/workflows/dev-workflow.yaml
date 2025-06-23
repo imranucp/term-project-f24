@@ -20,17 +20,18 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Install All Dependencies
+        run: |
+          npm install htmlhint stylelint stylelint-config-standard parcel --save-dev
 
-      - name: Run HTMLHint
-        run: ./node_modules/.bin/htmlhint "src/**/*.html"
+      - name: Run HTMLHint (with fresh install)
+        run: npx htmlhint "src/**/*.html"
 
-      - name: Run Stylelint
-        run: ./node_modules/.bin/stylelint "styles/**/*.css"
+      - name: Run Stylelint (with fresh install)
+        run: npx stylelint "styles/**/*.css"
 
       - name: Build Project with Parcel
-        run: ./node_modules/.bin/parcel build src/index.html --dist-dir dist
+        run: npx parcel build src/index.html --dist-dir dist
 
       - name: Deploy to Development Environment
         uses: peaceiris/actions-gh-pages@v3
