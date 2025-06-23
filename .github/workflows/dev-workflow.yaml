@@ -3,10 +3,13 @@ name: Development Workflow
 on:
   push:
     branches: [develop]
+  pull_request:
+    branches: [develop]
 
 jobs:
-  build-and-deploy:
+  DEV:
     runs-on: ubuntu-latest
+    environment: development
 
     steps:
       - name: Checkout Code
@@ -18,8 +21,10 @@ jobs:
           node-version: 20
 
       - name: Install Dependencies
-        run: |
-          npm install htmlhint stylelint stylelint-config-standard parcel --save-dev
+        run: npm install --save-dev
+
+      - name: Add node_modules/.bin to PATH
+        run: echo "$PWD/node_modules/.bin" >> $GITHUB_PATH
 
       - name: Run HTMLHint
         run: npx htmlhint "src/**/*.html"
