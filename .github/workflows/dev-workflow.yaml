@@ -5,10 +5,11 @@ on:
     branches: [develop]
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
+  DEV:
+   runs-on: ubuntu-latest
+   environment: development
 
-    steps:
+   steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
