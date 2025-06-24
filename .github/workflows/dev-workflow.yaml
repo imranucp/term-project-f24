@@ -22,7 +22,7 @@ jobs:
 
       - name: Install All Dependencies
         run: |
-          npm install htmlhint stylelint stylelint-config-standard parcel --save-dev
+          npm install htmlhint@1.1.4 stylelint stylelint-config-standard parcel --save-dev
 
       - name: Run HTMLHint (with fresh install)
         run: npx htmlhint "src/**/*.html"
@@ -31,7 +31,7 @@ jobs:
         run: npx stylelint "styles/**/*.css"
 
       - name: Build Project with Parcel
-        run: npx parcel build src/index.html --dist-dir dist
+        run: npx parcel build src/index.html --dist-dir dist --no-cache
 
       - name: Deploy to Development Environment
         uses: peaceiris/actions-gh-pages@v3

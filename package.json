@@ -18,7 +18,7 @@
   "main": "index.js",
   "description": "",
   "devDependencies": {
-    "htmlhint": "^1.6.3",
+    "htmlhint": "^1.1.4",
     "parcel": "^2.15.4",
     "stylelint": "^16.21.0",
     "stylelint-config-standard": "^38.0.0"
